@@ -1,3 +1,4 @@
+//********* LOGO *********
 @mixin headerLogo($logo, $position, $width: 470px) {
     background: url("#{$imgPath}#{$logo}.png") no-repeat 0 50px;
     float: $position;
@@ -6,6 +7,7 @@
     margin: 0;
     }
 
+//********* NAVIGATION *********
 @mixin headerNav($position, $transform, $width: 470px) {
     float: $position;
     width: $width;
@@ -14,6 +16,7 @@
     text-transform: $transform;
 }
 
+//********* HEADER *********
 @mixin header($colorH1, $colorH2, $colorH3, $paragraphAlign: justify) {
     h1 {
         color: $colorH1;
@@ -40,6 +43,7 @@
     }
 }
 
+//********* CONTENT *********
 @mixin featuredProducts($width, $gutter) {
     $productWidth: ((($width / 100) * 940) - $gutter) + 0px !global;
     $margin: $gutter !global;
@@ -52,9 +56,9 @@
         float: left;
         margin-right: 20px;
     }
-
 }
 
+//********* FOOTER *********
 @mixin footer($color, $textAlign: right, $height: 100px) {
     clear: both;
     width: 100%;
@@ -63,6 +67,7 @@
     text-align: $textAlign;
 }
 
+//********* MEDIA QUERY *********
 @mixin break($breakWidth) {
     @if $breakWidth == large {
         @media (max-width: 959px) {
