@@ -1,0 +1,70 @@
+@import "_mixins.scss";
+@import "_variables.scss";
+
+@import "modules/_navigation";
+@import "modules/headerFooter";
+
+/* BASIC STYLES */
+body {
+    font: 1em/2em $fontStack;
+    background: url("#{$imgPath}bg.gif") $h2 repeat-x;
+    margin: 0;
+}
+main {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    @include break(large) {width:768px}
+    @include break(middle) {width:460px}
+    @include break(small) {width:300px}  
+}
+
+/* CONTENT */
+#headline {
+    width: 100%;
+    height: 130px;
+    background: $h1;
+    text-align: center;
+    margin: 0 auto;  
+}
+
+#headline h1 {
+    color: $h2;
+    font-size: 2.5em;
+    font-weight: 100;
+    padding-top: 50px;
+    @include break(middle) {font-size: 2em; padding-top: 50px;}
+    @include break(small) {font-size: 1.5em; padding-top: 30px;}
+}
+
+#content {
+    width: 940px;
+    margin: 20px auto;
+    @include break(large) {width: inherit;}
+    h3 {
+        color: $h3;
+        font-size:2em;
+        font-weight:400;
+        @include break(small) {font-size: 1.6em;}
+    }
+    #products {
+        @include featuredProducts(51, 20);
+        article {
+            margin-bottom:40px;
+            img {
+                @include break(small) {display: none;}
+            }
+        }
+        h4 {
+            line-height: 1em;
+        }
+    }
+    #testimonials {
+        width: ($productWidth - $margin);
+        float: right;
+    }
+    #products, #testimonials {
+        @include break(large) {width: 46%; margin: 0 2%;}
+        @include break(middle) {width: 96%; margin: 0 2%; float: none;}
+    }
+}

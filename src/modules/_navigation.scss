@@ -1,0 +1,55 @@
+/* NAVIGATION */
+
+figure {
+    @include headerLogo(logo, left, 400px);
+    display: block;
+    @include break(large) {width: inherit; height: 140px; float: none; background-position: center;}
+    @include break(small) {background-size: contain; height: 100px;}
+}
+
+nav {
+    @include headerNav(left, uppercase, 540px);
+    ul {
+        list-style-type: none;
+        margin-top: 95px;
+        @include break(large) {margin-top: 0;}
+        li {
+            display: inline;
+            font-size: 0.8em;
+            margin-right: 10px;
+            @include break(large) {font-size: 1em; margin: 0 10px;}
+            @include break(middle) {font-size: 0.8em; margin: 0 5px;}
+            a {
+                color: $h1;
+                text-decoration: none;
+                letter-spacing: -0.01em;
+                &:hover {
+                    color: $h2;
+                }
+            }
+        }
+    }
+    @include break(large) {width: inherit; height: 50px; float: none; text-align: center;}
+    @include break(small) {margin-bottom: 40px !important;}
+}
+
+
+
+
+
+
+// nav ul                      {list-style-type:none;margin-top:95px;}
+// nav ul li                   {display:inline;font-size:0.8em;margin-right:10px;}
+// nav ul li a                 {color:#E65C43;text-decoration:none;letter-spacing:-0.01em;}
+// nav ul li a:hover           {color:#FFF;}
+
+
+
+
+
+
+
+
+
+
+

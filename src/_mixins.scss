@@ -1,0 +1,80 @@
+@mixin headerLogo($logo, $position, $width: 470px) {
+    background: url("#{$imgPath}#{$logo}.png") no-repeat 0 50px;
+    float: $position;
+    width: $width;
+    height:190px;
+    margin: 0;
+    }
+
+@mixin headerNav($position, $transform, $width: 470px) {
+    float: $position;
+    width: $width;
+    height: 190px;
+    text-align: right;
+    text-transform: $transform;
+}
+
+@mixin header($colorH1, $colorH2, $colorH3, $paragraphAlign: justify) {
+    h1 {
+        color: $colorH1;
+        font-weight: 100;
+        font-size: 4em;
+        line-height: 0;
+    }
+    h2 {
+        color: $colorH2;
+        font-weight: 900;
+        font-size: 2.5em;
+        line-height: 0;
+        margin-bottom: 70px;
+    }
+    h3 {
+        color: $colorH3;
+        font-weight: 400;
+        font-size: 2em;
+        line-height: 0;
+        margin-bottom: 50px;
+    }
+    p {
+        text-align: $paragraphAlign;
+    }
+}
+
+@mixin featuredProducts($width, $gutter) {
+    $productWidth: ((($width / 100) * 940) - $gutter) + 0px !global;
+    $margin: $gutter !global;
+    width: $productWidth;
+    margin-right: $gutter + 0px;
+    float: left;
+    img {
+        height: auto;
+        max-width: (.4 * $productWidth);  
+        float: left;
+        margin-right: 20px;
+    }
+
+}
+
+@mixin footer($color, $textAlign: right, $height: 100px) {
+    clear: both;
+    width: 100%;
+    background-color: $color;
+    height: $height;
+    text-align: $textAlign;
+}
+
+@mixin break($breakWidth) {
+    @if $breakWidth == large {
+        @media (max-width: 959px) {
+            @content;
+        }
+    } @else if $breakWidth == middle {
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $breakWidth == small {
+        @media (max-width: 459px) {
+            @content;
+        }
+    }  
+}

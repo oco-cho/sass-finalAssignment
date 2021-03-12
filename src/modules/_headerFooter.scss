@@ -1,0 +1,82 @@
+/* HEADER */
+
+header {
+    @include header($h1, $h2, $h3, center);
+    padding-top: 40px;
+    text-align: center;
+    clear: both;
+    width: inherit;
+    h1 {
+        @include break(large) {font-size: 3em;}
+        @include break(middle) {font-size: 2em;}
+        &:first-child {@include break(small) {font-size: 1.4em; margin-bottom:20px;}}
+    }
+    h2 {
+        @include break(large) {font-size: 1.5em;}
+        @include break(middle) {font-size: 1em;}
+        @include break(small) {font-size: 1.4em;}
+    }
+    h3 {
+        @include break(middle) {font-size: 1.5em;}
+        @include break(small) {color: $h2; font-size: 1em;}
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        @include break(middle) {margin-bottom: 100px;}
+        @include break(small) {margin-bottom: 80px}
+    }
+}
+
+/* FOOTER */
+footer {
+    @include footer($footer, center, 120px);
+    color: $h2;
+    padding-top: 50px;
+    span {
+        &:before {
+            content: $copyright;
+        }
+    }
+    @include break(small) {text-align: center;}
+    p, img {
+        @include break(small) {float: none; margin: 0;}
+    }
+}
+
+.greybar {
+    width: 100%;
+    height: 90px;
+    background: $bgBar;
+    clear:both;
+    padding-top:30px;
+    @include break(small) {display: none;}
+}
+
+.social-media {
+    margin: 0 auto;
+    width: 165px;
+}
+
+.social-media div {
+    float: left; margin-right: 5px;
+}
+.social-media a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    text-indent:-9999px;
+}
+
+.social-media div.one {
+    background:url('../images/social-media.png') 0 0;
+}
+.social-media div.two {
+    background:url('../images/social-media.png') -38px 0;
+}
+.social-media div.three {
+    background:url('../images/social-media.png') -76px 0;
+}
+.social-media div.four {
+    background:url('../images/social-media.png') -114px 0;
+}
